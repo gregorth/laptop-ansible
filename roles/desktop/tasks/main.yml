@@ -1,0 +1,30 @@
+- name: Install desktop software
+  action: yum pkg={{ item }} state=installed
+  with_items:
+    - firefox
+    - gitg
+    - qutim
+    - quassel
+    - clementine
+    - digikam
+    - libreoffice
+    - gimp
+    - kate
+
+- name: Remove calligra suite
+  yum: pkg=calligra-{{ item }} state=absent
+  with_items:
+   - kdchart
+   - words
+   - stage
+   - sheets
+   - libs
+   - stage
+   - core
+   - words
+   - sheets
+
+- include: infinality.yml
+- include: owncloud.yml
+- include: non-free.yml
+

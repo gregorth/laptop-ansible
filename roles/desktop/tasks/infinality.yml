@@ -1,0 +1,9 @@
+- name: Install the infinality repository
+  yum: pkg=http://www.infinality.net/fedora/linux/infinality-repo-1.0-1.noarch.rpm state=present
+
+- name: Install infinality patched components
+  action: yum pkg={{ item }} state=installed
+  with_items:
+    - freetype-infinality
+    - fontconfig-infinality
+

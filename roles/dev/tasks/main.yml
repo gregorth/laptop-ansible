@@ -1,0 +1,15 @@
+- name: Install Development Tools
+  yum: name="@Development Tools" state=present
+
+- name: Install Development Libraries
+  yum: name="@Development Libraries" state=present
+
+- name: Create the Projects directory
+  file: path=/home/{{ user }}/Projects state=directory
+  sudo: false
+
+- include: postgresql.yml
+- include: nodejs.yml
+- include: mongodb.yml
+- include: redis.yml
+
