@@ -1,6 +1,7 @@
 - name: Install desktop software
   action: yum pkg={{ item }} state=installed
   with_items:
+    - xcalib
     - firefox
     - gitg
     - qutim
