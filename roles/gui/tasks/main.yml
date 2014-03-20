@@ -11,6 +11,8 @@
     - libreoffice
     - gimp
     - kate
+    - audacity
+  tags: gui-tools
 
 - name: Remove calligra suite
   yum: pkg=calligra-{{ item }} state=absent

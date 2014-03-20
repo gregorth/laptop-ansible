@@ -1,0 +1,25 @@
+- name: Install tools
+  action: yum pkg={{ item }} state=installed
+  with_items:
+    - vim
+    - tmux
+    - htop
+    - ncdu
+    - nodejs
+    - docker-io
+    - wget
+    - aria2
+    - ranger
+    - tig
+    - nmap
+    - tcpdump
+    - flac
+    - shntool
+    - cuetools
+    - python-pip
+    - youtube-dl
+    - unrar
+    - parallel
+
+- name: Install the media converter
+  pip: name=brutha

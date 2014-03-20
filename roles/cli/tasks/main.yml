@@ -1,25 +1,4 @@
-- name: Install tools
-  action: yum pkg={{ item }} state=installed
-  with_items:
-    - tmux
-    - htop
-    - ncdu
-    - nodejs
-    - vim
-    - docker-io
-    - wget
-    - aria2
-    - ranger
-    - tig
-    - nmap
-    - tcpdump
-    - flac
-    - shntool
-    - cuetools
-    - python-pip
-    - youtube-dl
-    - unrar
-
+- include: tools.yml tags=cli-tools
 - include: oh-my-zsh.yml
 - include: homesick.yml
 
