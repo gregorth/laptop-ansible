@@ -13,13 +13,16 @@
     - tig
     - nmap
     - tcpdump
+    - youtube-dl
+    - unrar
+    - parallel
+    - sox
     - flac
     - shntool
     - cuetools
     - python-pip
-    - youtube-dl
-    - unrar
-    - parallel
+    - python-mutagen
+    - python-argparse
 
 - name: Install the media converter
   pip: name=brutha
