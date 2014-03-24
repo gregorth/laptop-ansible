@@ -29,5 +29,6 @@
 
 - include: infinality.yml
 - include: owncloud.yml
+- include: tor.yml tags=tor
 - include: non-free.yml
 
