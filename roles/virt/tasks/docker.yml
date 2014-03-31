@@ -1,0 +1,6 @@
+- name: Install Docker
+  yum: name=docker-io state=present
+
+- name: Add user to the docker group
+  user: name={{ user }} groups="docker" append=yes
+

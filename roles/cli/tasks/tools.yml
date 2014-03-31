@@ -6,7 +6,6 @@
     - htop
     - ncdu
     - nodejs
-    - docker-io
     - wget
     - aria2
     - ranger
@@ -26,3 +25,4 @@
 
 - name: Install the media converter
   pip: name=brutha
+

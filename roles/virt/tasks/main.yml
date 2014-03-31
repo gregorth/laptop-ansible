@@ -1,0 +1,2 @@
+- include: docker.yml  tags=virt
+- include: libvirt.yml tags=virt

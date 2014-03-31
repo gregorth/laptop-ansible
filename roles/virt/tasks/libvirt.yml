@@ -1,0 +1,13 @@
+- name: Install the virtualisation packages
+  yum: name={{ item }} state=present
+  with_items: [ "@virtualization", guestfish ]
+
+- name: Add the user to wheel group
+  user: name={{ user }} groups="wheel" append=yes
+
+- name: Add a PolicyKit rule to let the user access virt-manager
+  copy: src='80-libvirt-manage.rules' dest='/etc/polkit-1/rules.d/80-libvirt-manage.rules'
+
+- name: Enable the libvirtd service
+  service: name=libvirtd enabled=yes state=started
+
