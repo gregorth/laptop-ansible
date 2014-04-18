@@ -15,6 +15,7 @@
     - youtube-dl
     - unrar
     - parallel
+    - powertop
     - sox
     - flac
     - shntool
