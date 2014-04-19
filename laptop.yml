@@ -1,7 +1,10 @@
 - hosts: all
   roles:
-   - cli
+   - hardware
+   - shell
+   - desktop
    - dev
-   - gui
+   - net
+   - media
    - virt
 

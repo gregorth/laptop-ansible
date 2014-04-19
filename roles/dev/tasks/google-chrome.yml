@@ -1,0 +1,5 @@
+- name: Install Google Chrome yum repo
+  copy: src=google-chrome.repo dest=/etc/yum.repos.d/google-chrome.repo
+
+- name: Install Google Chrome
+  yum: pkg=google-chrome-unstable state=present

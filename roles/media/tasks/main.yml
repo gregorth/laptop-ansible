@@ -1,0 +1,27 @@
+- name: Install software
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - clementine
+    - digikam
+    - gimp
+    - audacity
+    - vlc
+    - smplayer
+    - sox
+    - flac
+    - shntool
+    - cuetools
+    - python-pip
+    - python-mutagen
+    - python-argparse
+
+- name: Install the media converter
+  pip: name=brutha
+
+- name: Install non-free codecs
+  yum: pkg={{ item }} state=present
+  with_items:
+    - gstreamer-plugins-ugly
+    - gstreamer-plugins-bad
+    - gstreamer-ffmpeg
+

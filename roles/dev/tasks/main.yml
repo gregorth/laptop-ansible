@@ -4,10 +4,20 @@
 - name: Install Development Libraries
   yum: name="@Development Libraries" state=present
 
+- name: Install Development-related tools
+  yum: name={{ item }} state=present
+  with_items:
+    - git
+    - tig
+    - gitg
+    - meld
+    - kate
+
 - name: Create the Projects directory
   file: path=/home/{{ user }}/Projects state=directory
   sudo: false
 
+- include: google-chrome.yml
 - include: postgresql.yml
 - include: nodejs.yml
 - include: mongodb.yml

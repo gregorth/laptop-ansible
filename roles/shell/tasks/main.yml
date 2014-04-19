@@ -1,0 +1,14 @@
+- name: Install software
+  yum: pkg={{ item }} state=present
+  with_items:
+    - vim
+    - tmux
+    - htop
+    - ncdu
+    - ranger
+    - unrar
+    - parallel
+
+- include: oh-my-zsh.yml
+- include: homesick.yml
+
