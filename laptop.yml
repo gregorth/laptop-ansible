@@ -1,6 +1,5 @@
 - hosts: all
   roles:
-   - hardware
    - shell
    - desktop
    - dev
