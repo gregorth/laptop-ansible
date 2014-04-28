@@ -4,6 +4,9 @@
     - clementine
     - digikam
     - gimp
+    - ImageMagick
+    - tesseract
+    - tesseract-langpack-rus
     - audacity
     - vlc
     - smplayer
