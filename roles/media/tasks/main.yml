@@ -2,6 +2,8 @@
   yum: pkg={{ item }} state=installed
   with_items:
     - clementine
+    - pavumeter
+    - pavucontrol
     - digikam
     - gimp
     - ImageMagick

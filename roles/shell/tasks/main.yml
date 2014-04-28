@@ -8,7 +8,8 @@
     - ranger
     - unrar
     - parallel
+    - zsh
+    - git
 
-- include: oh-my-zsh.yml
-- include: homesick.yml
+- include: dotfiles.yml
 

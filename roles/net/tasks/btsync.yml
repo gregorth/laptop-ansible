@@ -1,0 +1,20 @@
+- file: path={{ downloads_dir }} state=directory
+  sudo: no
+
+- get_url: url="http://download-lb.utorrent.com/endpoint/btsync/os/linux-x64/track/stable" dest="{{ downloads_dir }}/btsync.tgz"
+  sudo: no
+
+- shell: tar zxvf {{ downloads_dir}}/btsync.tgz -C {{ bin_dir }} creates={{ bin_dir }}/btsync
+  sudo: no
+
+- name: create a metadata directory
+  file: path={{ btsync_storage_dir }} state=directory
+  sudo: no
+
+- name: Copy a config template
+  template: src=btsync.conf.j2 dest=/home/{{ user }}/.btsync.conf
+  sudo: no
+
+- name: Copy a service template
+  template: src=btsync.service.j2 dest="/usr/lib/systemd/system/btsync@.service"
+
