@@ -1,6 +1,0 @@
-- name: Install the owncloud repository
-  copy: src=ownCloud_desktop.repo dest=/etc/yum.repos.d/ownCloud_desktop.repo
-
-- name: Install owncloud sync client
-  yum: pkg=owncloud-client state=present
-

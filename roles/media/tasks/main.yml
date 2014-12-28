@@ -4,8 +4,8 @@
     - clementine
     - pavumeter
     - pavucontrol
-    - digikam
     - gimp
+    - inkscape
     - ImageMagick
     - tesseract
     - tesseract-langpack-rus
@@ -23,7 +23,7 @@
 - name: Install the media converter
   pip: name=brutha
 
-- name: Install non-free codecs
+- name: Install codecs
   yum: pkg={{ item }} state=present
   with_items:
     - gstreamer-plugins-ugly

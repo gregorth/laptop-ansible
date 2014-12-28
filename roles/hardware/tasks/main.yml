@@ -1,9 +1,0 @@
-- name: Install software
-  yum: pkg={{ item }} state=installed
-  with_items:
-    - xcalib
-    - powertop
-
-- name: Install Broadcom wl modules
-  yum: name=kmod-wl state=present
-
