@@ -1,9 +1,0 @@
-- name: Install fedora-skype yum repo
-  copy: src=fedora-skype.repo dest=/etc/yum.repos.d/fedora-skype.repo
-
-- name: Install Skype and purple-skype
-  yum: name={{ item }} state=present
-  with_items:
-    - skype
-    - purple-skype
-
