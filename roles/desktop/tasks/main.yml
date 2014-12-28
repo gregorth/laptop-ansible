@@ -4,7 +4,3 @@
     - dia
     - freetype-freeworld
 
-- name: Enable autohinting for fonts
-  file: dest=/etc/fonts/conf.d/10-autohint.conf src=/usr/share/fontconfig/conf.avail/10-autohint.conf state=link
-
-
