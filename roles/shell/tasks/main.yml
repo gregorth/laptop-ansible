@@ -6,10 +6,13 @@
     - htop
     - ncdu
     - ranger
-    - unrar
     - parallel
-    - zsh
     - git
+    - the_silver_searcher
+    - zsh
+
+- name: change shell to zsh
+  user: name={{ user }} shell=/bin/zsh
 
 - include: dotfiles.yml
 
