@@ -15,7 +15,4 @@
 - name: Add user to the wireshark group
   user: name={{ user }} groups="wireshark" append=yes
 
-- include: btsync.yml
 - include: tor.yml
-- include: owncloud.yml
-
