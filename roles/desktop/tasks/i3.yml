@@ -1,0 +1,5 @@
+- name: Install i3 wm
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - i3
+    - i3status

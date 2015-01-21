@@ -1,5 +1,5 @@
 - name: Clone the dotfiles repo
-  git: repo="git@github.com:vaskas/dotfiles.git" dest=/home/{{ user }}/.dotfiles
+  git: repo="git@github.com:vaskas/dotfiles.git" dest=/home/{{ user }}/.dotfiles accept_hostkey=True
   sudo: false
 
 - name: Symlink dotfiles

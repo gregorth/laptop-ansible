@@ -4,3 +4,4 @@
     - dia
     - freetype-freeworld
 
+- include: i3.yml

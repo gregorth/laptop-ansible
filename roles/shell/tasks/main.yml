@@ -10,6 +10,7 @@
     - git
     - the_silver_searcher
     - zsh
+    - kpcli
 
 - name: change shell to zsh
   user: name={{ user }} shell=/bin/zsh
