@@ -3,6 +3,7 @@
   with_items:
     - mirall
     - pidgin
+    - pidgin-otr
     - xchat
     - wireshark
     - wireshark-gnome
