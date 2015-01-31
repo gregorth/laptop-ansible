@@ -2,6 +2,7 @@
   yum: pkg={{ item }} state=installed
   with_items:
     - dia
+    - xournal
     - freetype-freeworld
 
 - include: i3.yml
