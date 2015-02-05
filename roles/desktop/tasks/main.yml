@@ -5,4 +5,17 @@
     - xournal
     - freetype-freeworld
 
+- name: Install fonts
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - google-droid-sans-fonts
+    - google-droid-serif-fonts
+    - google-droid-sans-mono-fonts
+    - dejavu-sans-fonts
+    - dejavu-serif-fonts
+    - dejavu-sans-mono-fonts
+    - levien-inconsolata-fonts
+    - paratype-pt-sans-fonts
+    - adobe-source-sans-pro-fonts
+
 - include: i3.yml
