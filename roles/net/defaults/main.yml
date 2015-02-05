@@ -1,3 +1,0 @@
-downloads_dir: "/home/{{ user }}/Downloads"
-bin_dir: "/home/{{ user }}/bin"
-btsync_storage_dir: "/home/{{ user }}/.btsync"
