@@ -4,6 +4,7 @@
     - dia
     - xournal
     - freetype-freeworld
+    - gnome-tweak-tool
 
 - name: Install fonts
   yum: pkg={{ item }} state=installed
