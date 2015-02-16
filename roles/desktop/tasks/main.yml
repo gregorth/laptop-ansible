@@ -1,9 +1,10 @@
 - name: Install software
   yum: pkg={{ item }} state=installed
   with_items:
+    - freetype-freeworld
+    - xsel
     - dia
     - xournal
-    - freetype-freeworld
     - gnome-tweak-tool
 
 - name: Install fonts
