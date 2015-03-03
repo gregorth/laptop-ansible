@@ -1,0 +1,45 @@
+- name: Install dependencies
+  yum: pkg={{ item }} state=installed
+  with_items:
+    - alsa-lib.i686
+    - fontconfig.i686
+    - freetype.i686
+    - glib2.i686
+    - libSM.i686
+    - libXScrnSaver.i686
+    - libXi.i686
+    - libXrandr.i686
+    - libXrender.i686
+    - libXv.i686
+    - libstdc++.i686
+    - pulseaudio-libs.i686
+    - qt.i686
+    - qt-x11.i686
+    - zlib.i686
+    - qtwebkit.i686
+
+- name: Check if installed
+  stat: path=/usr/bin/skype
+  register: binary
+
+- name: Download Skype
+  get_url: url=http://www.skype.com/go/getskype-linux-dynamic dest=/tmp/skype.tbz2
+  when: (not binary.stat.exists)
+
+- name: Create /opt/skype
+  file: path=/opt/skype state=directory
+
+- name: Unpack Skype
+  command: tar xvf /tmp/skype.tbz2 -C /opt/skype --strip-components=1
+  when: (not binary.stat.exists)
+
+- name: Create a Launcher
+  file: src={{ item.src }} dest={{ item.dest }} state=link
+  with_items:
+    - { dest: '/usr/share/applications/skype.desktop', src: '/opt/skype/skype.desktop' }
+    - { dest: '/usr/share/icons/skype.png', src: '/opt/skype/icons/SkypeBlue_48x48.png' }
+    - { dest: '/usr/share/pixmaps/skype.png', src: '/opt/skype/icons/SkypeBlue_48x48.png' }
+
+- name: Copy the launch script
+  copy: src=skype dest=/usr/bin/skype mode=0755
+
