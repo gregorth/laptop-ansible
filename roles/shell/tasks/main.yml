@@ -5,13 +5,11 @@
     - tmux
     - htop
     - ncdu
-    - ranger
     - parallel
     - git
     - the_silver_searcher
     - zsh
     - kpcli
-    - shred
 
 - name: change shell to zsh
   user: name={{ user }} shell=/bin/zsh
