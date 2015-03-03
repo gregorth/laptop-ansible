@@ -1,0 +1,22 @@
+- name: Detect the installation
+  stat: path=/usr/bin/syncthing
+  register: binary
+
+- name: Download syncthing
+  get_url: url=https://github.com/syncthing/syncthing/releases/download/{{ syncthing_version }}/syncthing-linux-amd64-{{ syncthing_version }}.tar.gz dest=/tmp/syncthing.tgz
+  when: (not binary.stat.exists)
+
+- name: Unpack syncthing
+  unarchive: src=/tmp/syncthing.tgz dest=/tmp copy=no
+  when: (not binary.stat.exists)
+
+- name: Move the binary
+  command: mv /tmp/syncthing-linux-amd64-{{ syncthing_version }}/syncthing /usr/bin/syncthing
+  when: (not binary.stat.exists)
+
+- name: Copy the systemd unit
+  copy: src='syncthing@.service' dest='/etc/systemd/system/syncthing@.service'
+
+- name: Enable the service
+  service: name='syncthing@{{ user }}' enabled=yes state=started
+
