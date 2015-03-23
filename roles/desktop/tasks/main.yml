@@ -19,5 +19,7 @@
     - levien-inconsolata-fonts
     - paratype-pt-sans-fonts
     - adobe-source-sans-pro-fonts
+    - mozilla-fira-mono-fonts
+    - mozilla-fira-sans-fonts
 
 - include: i3.yml
