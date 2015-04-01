@@ -21,5 +21,6 @@
     - adobe-source-sans-pro-fonts
     - mozilla-fira-mono-fonts
     - mozilla-fira-sans-fonts
+    - gdouros-symbola-fonts
 
 - include: i3.yml
