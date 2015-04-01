@@ -5,6 +5,7 @@
     - xsel
     - dia
     - xournal
+    - pandoc
     - gnome-tweak-tool
 
 - name: Install fonts
