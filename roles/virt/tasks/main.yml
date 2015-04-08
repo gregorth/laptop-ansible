@@ -1,5 +1,9 @@
-- include: docker.yml
+- name: Install the tools
+  yum: name={{ item }} state=present
+  with_items:
+    - docker-io
+    - virt-manager
+    - VirtualBox
 
-- name: Install VirtualBox
-  yum: pkg=VirtualBox state=present
-
+- name: Add user to the docker group
+  user: name={{ user }} groups="docker" append=yes
