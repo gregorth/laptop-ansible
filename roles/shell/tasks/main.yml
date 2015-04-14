@@ -14,5 +14,3 @@
 - name: change shell to zsh
   user: name={{ user }} shell=/bin/zsh
 
-- include: dotfiles.yml
-
