@@ -9,12 +9,14 @@
   with_items:
     - git
     - tig
-    - gitg
     - meld
     - golang
 
 - name: Create the Projects directory
-  file: path=/home/{{ user }}/Projects state=directory
+  file: path=/home/{{ user }}/{{ item }} state=directory
+  with_items:
+    - Projects
+    - Source
   sudo: false
 
 - include: google-chrome.yml

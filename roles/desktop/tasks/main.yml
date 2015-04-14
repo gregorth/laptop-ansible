@@ -3,9 +3,9 @@
   with_items:
     - freetype-freeworld
     - xsel
-    - dia
-    - xournal
+    - feh
     - pandoc
+    - xournal
     - gnome-tweak-tool
 
 - name: Install fonts
@@ -24,4 +24,3 @@
     - mozilla-fira-sans-fonts
     - gdouros-symbola-fonts
 
-- include: i3.yml

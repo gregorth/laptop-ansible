@@ -1,9 +1,0 @@
-- name: install tor yum repo
-  copy: src=torproject.repo dest=/etc/yum.repos.d/torproject.repo
-
-- name: install tor
-  yum: name=tor state=present
-
-- name: enable and start the tor service
-  service: name=tor enabled=yes state=started
-

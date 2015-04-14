@@ -1,14 +1,12 @@
 - name: Install software
   yum: pkg={{ item }} state=installed
   with_items:
+    - cmus
     - clementine
-    - pavumeter
     - pavucontrol
     - gimp
     - inkscape
     - ImageMagick
-    - tesseract
-    - tesseract-langpack-rus
     - audacity
     - vlc
     - smplayer
