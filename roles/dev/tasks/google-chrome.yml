@@ -1,8 +1,8 @@
-- name: Install Google Chrome yum repo
+- name: Install Google Chrome dnf repo
   copy: src=google-chrome.repo dest=/etc/yum.repos.d/google-chrome.repo
 
 - name: Install Google Chrome
-  yum: pkg=google-chrome-stable state=present
+  dnf: pkg=google-chrome-stable state=present
 
 - name: Apply the global fonts configuration
   copy: src=local.conf dest=/etc/fonts/local.conf

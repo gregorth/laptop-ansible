@@ -1,0 +1,19 @@
+- name: Install tweaked freetype
+  dnf: pkg=freetype-freeworld state=installed
+
+- name: Install fonts
+  dnf: pkg={{ item }} state=installed
+  with_items:
+    - google-droid-sans-fonts
+    - google-droid-serif-fonts
+    - google-droid-sans-mono-fonts
+    - dejavu-sans-fonts
+    - dejavu-serif-fonts
+    - dejavu-sans-mono-fonts
+    - levien-inconsolata-fonts
+    - paratype-pt-sans-fonts
+    - adobe-source-sans-pro-fonts
+    - mozilla-fira-mono-fonts
+    - mozilla-fira-sans-fonts
+    - gdouros-symbola-fonts # emoji
+

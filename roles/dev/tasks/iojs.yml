@@ -1,8 +1,8 @@
 - name: Install the nibbler/iojs COPR
-  copy: src=nibbler-iojs-fedora-21.repo dest=/etc/yum.repos.d
+  copy: src=nibbler-iojs-fedora-22.repo dest=/etc/yum.repos.d
 
 - name: Install io.js
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - iojs
     - iojs-npm

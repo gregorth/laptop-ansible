@@ -1,0 +1,22 @@
+#!/bin/sh
+
+CSS_URL="$HOME/Notes/html/default.css"
+
+src_file="$1"
+
+if [ -z "$src_file" ]; then
+  echo "Usage: mdown filename.md [-s]"
+  exit 1
+fi
+
+src_dir=`dirname "$src_file"`
+dest_dir="$src_dir/html"
+
+[ ! -d "$dest_dir" ] && dest_dir="/tmp"
+
+src_file=`readlink -f "$src_file"`
+dest_file="$dest_dir/`basename "$src_file" | sed -e 's/.md//'`.html"
+
+pandoc -f markdown_github -c "$CSS_URL" "$src_file" > "$dest_file"
+
+if [ "$2" != "-s" ]; then xdg-open "$dest_file"; fi
