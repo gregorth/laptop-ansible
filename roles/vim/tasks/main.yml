@@ -1,0 +1,10 @@
+- dnf: name=vim state=present
+
+- name: Link .vimrc and .vim
+  file: src={{ role_path }}/files/{{ item }} dest=/home/{{ user }}/.{{ item }} state=link
+  with_items:
+    - vim
+    - vimrc
+
+- name: Install plugins
+  command: vim +PluginInstall +qall

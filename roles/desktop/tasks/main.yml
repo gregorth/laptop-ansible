@@ -1,26 +1,20 @@
 - name: Install software
-  yum: pkg={{ item }} state=installed
+  dnf: pkg={{ item }} state=installed
   with_items:
-    - freetype-freeworld
-    - xsel
-    - feh
-    - pandoc
     - xournal
     - gnome-tweak-tool
+    - xsel
+    - conky
+    - feh
 
-- name: Install fonts
-  yum: pkg={{ item }} state=installed
-  with_items:
-    - google-droid-sans-fonts
-    - google-droid-serif-fonts
-    - google-droid-sans-mono-fonts
-    - dejavu-sans-fonts
-    - dejavu-serif-fonts
-    - dejavu-sans-mono-fonts
-    - levien-inconsolata-fonts
-    - paratype-pt-sans-fonts
-    - adobe-source-sans-pro-fonts
-    - mozilla-fira-mono-fonts
-    - mozilla-fira-sans-fonts
-    - gdouros-symbola-fonts
+- name: Link dotfiles
+  file: >-
+    src={{ item }}
+    dest=/home/{{ user }}/.{{ item | basename }}
+    mode=0600
+    state=link
+  with_fileglob:
+    - ./dot/*
+
+- include: fonts.yml
 

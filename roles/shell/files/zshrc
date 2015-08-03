@@ -1,0 +1,40 @@
+source $HOME/.profile
+if [ -f "$HOME/.aliases" ]; then source "$HOME/.aliases"; fi
+
+export HISTFILE=$HOME/.history.zsh
+export SAVEHIST=1000
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+
+if [ -n "$TMUX" ]; then
+  export TERM=screen-256color
+else
+  export TERM=xterm-256color
+fi
+
+autoload colors
+colors
+
+autoload -U compinit
+compinit
+
+zstyle ':completion:*' menu select
+
+source $HOME/.zsh/z.sh
+
+source $HOME/.zsh/antigen.zsh
+antigen bundle mafredri/zsh-async
+antigen bundle vaskas/pure
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+
+# bind up and down keys
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
+source "$HOME/.zsh/themes/dark.sh"
+

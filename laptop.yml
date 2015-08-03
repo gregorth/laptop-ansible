@@ -1,7 +1,6 @@
 - hosts: all
   roles:
    - shell
-   - dotfiles
    - desktop
    - dev
    - net

@@ -1,0 +1,25 @@
+if command -v nvim > /dev/null 2>&1; then
+  export EDITOR=$(which nvim)
+  alias vim="nvim"
+  alias vi="nvim"
+fi
+
+if command -v colorls > /dev/null 2>&1; then
+  export CLICOLOR=1
+  alias ls="colorls"
+fi
+
+alias l="ls -al"
+alias cl="clear"
+
+alias ap="ansible-playbook"
+alias t="todo.sh"
+
+export POCKET="~/Notes/Pocket.md"
+alias p="vi $POCKET && mdown $POCKET -s"
+alias pp="mdown $POCKET"
+
+n() {
+  mkdir -p "$1"
+  vi ~/Notes/"$1"/"$2".md
+}

@@ -1,13 +1,12 @@
 - name: Install Development Tools
-  yum: name="@Development Tools" state=present
+  dnf: name="@Development Tools" state=present
 
 - name: Install Development Libraries
-  yum: name="@Development Libraries" state=present
+  dnf: name="@Development Libraries" state=present
 
 - name: Install Development-related tools
-  yum: name={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
-    - git
     - tig
     - meld
     - golang

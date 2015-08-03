@@ -1,0 +1,142 @@
+set enc=utf-8
+set nocompatible
+filetype off
+set backspace=indent,eol,start
+set viminfo+=!
+set hidden
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" Environment
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'ervandew/supertab'
+Plugin 'gabesoft/vim-ags'
+Plugin 'bling/vim-airline'
+Plugin 'nathanaelkane/vim-indent-guides'
+
+" Syntax
+Plugin 'elzr/vim-json'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'ap/vim-css-color'
+Plugin 'fatih/vim-go'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'wavded/vim-stylus'
+Plugin 'lepture/vim-jinja'
+Plugin 'LeonB/vim-nginx'
+
+" Git
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+
+" Colors
+Plugin 'morhetz/gruvbox'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'chriskempson/base16-vim'
+Plugin 'fcourchesne/ViZuki'
+Plugin 'ronny/birds-of-paradise.vim'
+call vundle#end()
+
+syntax on
+filetype plugin indent on
+
+autocmd BufEnter * :syntax sync fromstart
+autocmd BufReadPost fugitive://* set bufhidden=delete
+
+set t_Co=256
+
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
+
+set ruler
+set guioptions-=T
+set completeopt-=preview
+set gcr=a:blinkon0
+
+set number
+set cmdheight=2
+set laststatus=2
+
+set guitablabel=%N/\ %t\ %M
+
+set list
+set listchars=tab:▸\ ,eol:¬
+
+set smarttab
+set smartindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+
+" Insert spaces at the beginning of a line and tabs elsewhere
+inoremap <Silent> <Tab> <C-R>=(col('.') > (matchend(getline('.'), '^\s*') + 1))?'<C-V><C-V><Tab>':'<Tab>'<CR>
+
+" Ruby
+autocmd FileType ruby setlocal shiftwidth=2 tabstop=2 softtabstop=2
+
+" HTML, ERB
+let html_no_rendering=1
+autocmd BufNewFile,BufRead *.rhtml setlocal ft=eruby
+
+" JavaScript
+let javascript_enable_domhtmlcss=1
+
+" JSON
+autocmd FileType json setlocal shiftwidth=2 tabstop=2
+autocmd BufEnter * :setlocal conceallevel=0
+
+" CoffeeScript
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufRead,BufEnter *.agsv set filetype=agsv
+
+" Remove trailing whitespace
+fun! StripWhitespace()
+  if exists('b:keep_whitespace')
+    return
+  endif
+  %s/\s\+$//e
+endfun
+
+autocmd BufWritePre * call StripWhitespace()
+
+" Key mappings
+map <leader>a :Ags
+map <leader>t :CtrlP<CR>
+map <leader>o :NERDTreeToggle<CR>
+map <leader>n :tabnew<CR>
+map <leader>w :tabclose<CR>
+
+" tab switching
+let i = 1
+while i <= 9
+  execute 'nnoremap <leader>' . i . ' ' . i . 'gt'
+  let i = i + 1
+endwhile
+
+" formatters
+map <leader>pj :%!python -m json.tool<CR>
+map <leader>px :%!xmllint % --format<CR>
+map <leader>pc :CoffeeCompile<CR>
+map <leader>pm :!mdown "%"<CR>
+
+" ctrlp: use the_silver_searcher for indexing if present
+if executable('ag')
+  set grepprg=ag\ --nogroup\ --nocolor
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
+
+let g:airline_powerline_fonts = 0
+
+" decorate
+set background=light
+set background=dark
+let base16colorspace=256
+colorscheme base16-ocean
+

@@ -1,9 +1,8 @@
 - name: Install software
-  yum: pkg={{ item }} state=installed
+  dnf: pkg={{ item }} state=installed
   with_items:
     - cmus
     - clementine
-    - pavucontrol
     - gimp
     - inkscape
     - ImageMagick
@@ -14,15 +13,9 @@
     - flac
     - shntool
     - cuetools
-    - python-pip
-    - python-mutagen
-    - python-argparse
-
-- name: Install the media converter
-  pip: name=brutha
 
 - name: Install codecs
-  yum: pkg={{ item }} state=present
+  dnf: pkg={{ item }} state=present
   with_items:
     - gstreamer-plugins-ugly
     - gstreamer-plugins-bad
