@@ -1,7 +1,6 @@
 - name: Install software
   dnf: pkg={{ item }} state=installed
   with_items:
-    - cmus
     - clementine
     - gimp
     - inkscape
