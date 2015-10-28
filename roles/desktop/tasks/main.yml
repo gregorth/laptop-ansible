@@ -5,7 +5,6 @@
     - gnome-tweak-tool
     - xsel
     - conky
-    - feh
 
 - name: Link dotfiles
   file: >-

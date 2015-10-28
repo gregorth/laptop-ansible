@@ -3,6 +3,7 @@
   ci = commit
   rb = rebase
   st = status
+  cl = clone
 
 [color]
   status = auto
