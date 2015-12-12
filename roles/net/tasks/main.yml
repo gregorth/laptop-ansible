@@ -1,7 +1,6 @@
 - name: Install software
   dnf: pkg={{ item }} state=present
   with_items:
-    - mirall
     - pidgin
     - pidgin-otr
     - hexchat

@@ -1,2 +1,0 @@
-- name: restart syncthing
-  service: name=syncthing@{{ user }} state=restarted
