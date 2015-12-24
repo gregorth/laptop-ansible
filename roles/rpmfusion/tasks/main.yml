@@ -1,5 +1,5 @@
 - name: Install RPMFusion repositories
   dnf: name={{ item }} state=present
   with_items:
-    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-22.noarch.rpm
+    - http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-23.noarch.rpm
 
