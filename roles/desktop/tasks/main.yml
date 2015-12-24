@@ -16,4 +16,5 @@
     - ./dot/*
 
 - include: fonts.yml
+- include: keepassx.yml
 
