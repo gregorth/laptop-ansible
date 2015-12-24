@@ -38,3 +38,6 @@ bindkey '^[[B' history-substring-search-down
 
 source "$HOME/.zsh/themes/dark.sh"
 
+
+export NVM_DIR="/home/vaskas/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
