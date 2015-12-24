@@ -1,0 +1,8 @@
+- name: Install the Syncthing COPR repo
+  copy: src=_copr_decathorpe-syncthing.repo dest=/etc/yum.repos.d/_copr_decathorpe-syncthing.repo
+
+- dnf: name=syncthing state=present
+
+- name: Enable and start the service
+  service: name=syncthing@{{ user }} state=running enabled=yes
+
