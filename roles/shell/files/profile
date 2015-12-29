@@ -1,6 +1,8 @@
 export GOPATH="$HOME/go"
 
-export PATH=$HOME/.bin:$GOPATH/bin:./node_modules/.bin:$HOME/.gem/bin:/usr/local/heroku/bin:$PATH
+export ANDROID_HOME=$HOME/Downloads/android-sdk-linux
+
+export PATH=$HOME/.bin:$GOPATH/bin:./node_modules/.bin:$HOME/.gem/bin:/usr/local/heroku/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
 export PKG_PATH="http://mirror.internode.on.net/pub/OpenBSD/snapshots/packages/amd64/"
 
