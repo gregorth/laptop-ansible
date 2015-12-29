@@ -13,3 +13,4 @@
 --type-add=ruby=.feature
 --type-add=shell=.fish
 --type-add=go=.go
+--type-add=xml=.xml
