@@ -13,3 +13,6 @@
 [user]
   name = Vasily Mikhaylichenko
   email = vaskas@lxmx.com.au
+
+[mergetool "vimdiff3"]
+   cmd = vim -f -d -c \"wincmd J\" \"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
