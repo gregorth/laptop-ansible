@@ -11,11 +11,7 @@
     - meld
     - golang
 
-- name: Create the Projects directory
-  file: path=/home/{{ user }}/{{ item }} state=directory
-  with_items:
-    - Projects
-    - Source
+- file: path=/home/{{ user }}/Code state=directory
   sudo: false
 
 - include: google-chrome.yml
