@@ -17,6 +17,7 @@ alias t="todo.sh"
 export POCKET="~/Notes/Pocket.md"
 alias p="vi $POCKET && mdown $POCKET -s"
 alias pp="mdown $POCKET"
+alias xo="xdg-open"
 
 n() {
   mkdir -p "$1"

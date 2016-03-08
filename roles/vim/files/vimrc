@@ -16,6 +16,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'ervandew/supertab'
 Plugin 'gabesoft/vim-ags'
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
 
 " Syntax
@@ -136,8 +137,9 @@ let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
 " decorate
-set background=light
 set background=dark
+set background=light
 let base16colorspace=256
-colorscheme base16-ocean
+colorscheme base16-solarized
+let g:airline_theme='base16'
 
