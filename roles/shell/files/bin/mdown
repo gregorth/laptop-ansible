@@ -1,6 +1,12 @@
 #!/bin/sh
 
-CSS_URL="$HOME/Notes/html/default.css"
+CSS_URL="/tmp/mdown.css"
+
+echo "body {
+  padding: 10px;
+  padding-left: 20px;
+  color: #444;
+}" >> "$CSS_URL"
 
 src_file="$1"
 
