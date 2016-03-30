@@ -18,6 +18,8 @@ Plugin 'gabesoft/vim-ags'
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'rkitover/vimpager'
+Plugin 'yegappan/mru'
 
 " Syntax
 Plugin 'elzr/vim-json'
@@ -110,6 +112,7 @@ autocmd BufWritePre * call StripWhitespace()
 " Key mappings
 map <leader>a :Ags
 map <leader>t :CtrlP<CR>
+map <leader>m :MRU<CR>
 map <leader>o :NERDTreeToggle<CR>
 map <leader>n :tabnew<CR>
 map <leader>w :tabclose<CR>
