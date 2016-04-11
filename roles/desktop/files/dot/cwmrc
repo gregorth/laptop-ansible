@@ -1,17 +1,20 @@
 # ~/.cwmrc
 
 sticky yes
-borderwidth 2
-fontname "Cuprum:pixelsize=14"
-gap 17 0 0 0
+borderwidth 1
+fontname "Input Mono:pixelsize=12"
+gap 0 0 0 0
 
-color menubg black
-color menufg black
-color font white
-color selfont "#925a97"
+color menubg "#fdf6e3"
+color menufg "#eee8d5"
+color font "#586e75"
+color selfont "#586e75"
+
+color activeborder "#586e75"
+color inactiveborder "#c0c0c0"
 
 # Override built-in term command
-command term "urxvt"
+command term "gnome-terminal"
 
 # Keybindings: commands
 bind 4-Return exec
@@ -43,6 +46,7 @@ bind S4-3 movetogroup3
 bind S4-4 movetogroup4
 bind S4-5 movetogroup5
 bind 4-T vtile
+bind 4-L "xscreensaver-command -lock"
 
 mousebind 4-1 window_move
 mousebind 4-2 window_resize
@@ -50,8 +54,8 @@ mousebind 4-2 window_resize
 autogroup 1 "Navigator,Firefox"
 autogroup 1 "Dialog,Firefox"
 
-autogroup 2 "pidgin,Pidgin"
-autogroup 2 "xchat,Xchat"
+autogroup 2 "atom,Atom"
+autogroup 3 "gnome-terminal,Gnome-terminal"
 
 ignore conky
 ignore panel

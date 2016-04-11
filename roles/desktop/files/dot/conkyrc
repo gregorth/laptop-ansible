@@ -5,15 +5,15 @@ own_window no
 own_window_class Conky
 own_window_type desktop
 use_xft yes
-gap_x 5
+gap_x 10
 gap_y 2
-xftfont PragmataPro:size=9
+xftfont Input Mono:size=10
 out_to_x yes
 out_to_console no
 update_interval 2
 total_run_times 0
 use_spacer none
 TEXT
-CPU: ${cpubar cpu0 10,40 } ${cpu cpu0}% |  RAM: ${membar 10,40} ${memperc}% | ${if_up em0}LAN [${execi 10 netcheck.sh}] ${addr em0}, ${downspeedf em0}kbps/${upspeedf em0}kbps |${endif}${if_up iwn0}WLAN [${execi 10 netcheck.sh}] ${addr iwn0}, ${downspeedf iwn0}kbps/${upspeedf iwn0}kbps |${endif} ${fs_free /} free on / | Uptime: ${uptime_short} | Bat ${apm_battery_life} [${apm_battery_time}] | ${execi 5 date }
+CPU: ${cpubar cpu0 10,40 } ${cpu cpu0}% |  RAM: ${membar 10,40} ${memperc}% | ${if_up em0}LAN [${execi 10 netcheck.sh}] ${addr em0}, ${downspeedf em0}kbps/${upspeedf em0}kbps |${endif}${if_up wlp3s0}WLAN [${execi 10 netcheck.sh}: ${execi 10 nm-wifi-name.sh}] ${addr wlp3s0}, ${downspeedf wlp3s0}kbps/${upspeedf wlp3s0}kbps |${endif} ${fs_free /} free on / | Uptime: ${uptime_short} | Bat ${battery_percent}% ${battery_short} | ${execi 5 date }
 
 

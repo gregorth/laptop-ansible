@@ -5,6 +5,7 @@
     - gnome-tweak-tool
     - xsel
     - conky
+    - xscreensaver
 
 - name: Link dotfiles
   file: >-

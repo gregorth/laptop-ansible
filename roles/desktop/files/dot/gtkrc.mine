@@ -1,10 +1,11 @@
 style "font"
 {
-  font_name = "Droid Sans Regular 10"
+  font_name = "Cantarell 10"
 }
 widget_class "*" style "font"
-gtk-font-name = "Droid Sans Regular 10"
+gtk-font-name = "Cantarell 10"
 
 gtk-icon-theme-name = "Numix-Circle"
 gtk-key-theme-name = "Default"
+gtk-theme-name = "Arc"
 
