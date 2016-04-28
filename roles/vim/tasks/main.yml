@@ -7,4 +7,4 @@
     - vimrc
 
 - name: Install plugins
-  command: vim +PluginInstall +qall
+  command: vim +PlugInstall +qall

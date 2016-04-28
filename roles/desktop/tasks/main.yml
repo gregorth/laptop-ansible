@@ -16,6 +16,5 @@
   with_fileglob:
     - ./dot/*
 
-- include: fonts.yml
 - include: keepassx.yml
 
