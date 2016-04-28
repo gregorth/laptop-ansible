@@ -5,43 +5,43 @@ set backspace=indent,eol,start
 set viminfo+=!
 set hidden
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
 " Environment
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'ervandew/supertab'
-Plugin 'gabesoft/vim-ags'
-Plugin 'bling/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'rkitover/vimpager'
-Plugin 'yegappan/mru'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdcommenter'
+Plug 'ervandew/supertab'
+Plug 'gabesoft/vim-ags'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'rkitover/vimpager'
+Plug 'yegappan/mru'
 
 " Syntax
-Plugin 'elzr/vim-json'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'ap/vim-css-color'
-Plugin 'fatih/vim-go'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'wavded/vim-stylus'
-Plugin 'lepture/vim-jinja'
-Plugin 'LeonB/vim-nginx'
+Plug 'elzr/vim-json'
+Plug 'kchmck/vim-coffee-script'
+Plug 'ap/vim-css-color'
+Plug 'fatih/vim-go'
+Plug 'digitaltoad/vim-jade'
+Plug 'wavded/vim-stylus'
+Plug 'lepture/vim-jinja'
+Plug 'LeonB/vim-nginx'
+Plug 'aklt/plantuml-syntax'
 
 " Git
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
 " Colors
-Plugin 'morhetz/gruvbox'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'chriskempson/base16-vim'
-Plugin 'fcourchesne/ViZuki'
-Plugin 'ronny/birds-of-paradise.vim'
-call vundle#end()
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'fcourchesne/ViZuki'
+Plug 'ronny/birds-of-paradise.vim'
+Plug 'https://bitbucket.org/kisom/eink.vim.git'
+call plug#end()
 
 syntax on
 filetype plugin indent on

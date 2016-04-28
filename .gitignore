@@ -1,3 +1,2 @@
 roles/vim/files/vim/sessions/*.swp
-roles/vim/files/vim/bundle/*
-!roles/vim/files/vim/bundle/Vundle.vim
+roles/vim/files/vim/plugged/*
