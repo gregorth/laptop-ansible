@@ -1,11 +1,17 @@
 - name: Install software
-  dnf: pkg={{ item }} state=installed
+  package: name={{ item }} state=installed
   with_items:
     - xournal
-    - gnome-tweak-tool
     - xsel
-    - conky
     - xscreensaver
+    - gnome-tweak-tool
+    - nautilus
+    - eog
+    - file-roller
+    - rxvt-unicode
+    - libreoffice
+    - gedit
+    - conky
 
 - name: Link dotfiles
   file: >-
@@ -17,4 +23,10 @@
     - ./dot/*
 
 - include: keepassx.yml
+
+- include: fonts.yml
+  when: ansible_os_family == "OpenBSD"
+
+- include: google-chrome.yml
+  when: ansible_os_family == "RedHat"
 

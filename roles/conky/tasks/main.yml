@@ -1,0 +1,9 @@
+- package: name='conky--' state=present
+  when: ansible_os_family == "OpenBSD"
+
+- package: name=conky state=present
+  when: ansible_os_family != "OpenBSD"
+
+- name: Link conkyrc
+  file: src={{ playbook_dir}}/roles/conky/files/dot/conkyrc.{{ ansible_system }}  dest=/home/{{ user }}/.conkyrc state=link
+

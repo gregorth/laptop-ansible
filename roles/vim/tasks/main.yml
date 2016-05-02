@@ -1,4 +1,8 @@
-- dnf: name=vim state=present
+- package: name=vim state=present
+  when: ansible_os_family != "OpenBSD"
+
+- package: name=vim--no_x11 state=present
+  when: ansible_os_family == "OpenBSD"
 
 - name: Link .vimrc and .vim
   file: src={{ role_path }}/files/{{ item }} dest=/home/{{ user }}/.{{ item }} state=link

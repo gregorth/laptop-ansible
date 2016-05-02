@@ -1,11 +1,11 @@
 - hosts: all
   roles:
    - shell
-   - desktop
-   - dev
-   - net
-   - syncthing
-   - media
-   - virt
-   - webex
+   - { role: desktop,   when: ansible_os_family == 'RedHat' }
+   - { role: dev,       when: ansible_os_family == 'RedHat' }
+   - { role: net,       when: ansible_os_family == 'RedHat' }
+   - { role: syncthing, when: ansible_os_family == 'RedHat' }
+   - { role: media,     when: ansible_os_family == 'RedHat' }
+   - { role: virt,      when: ansible_os_family == 'RedHat' }
+   - { role: webex,     when: ansible_os_family == 'RedHat' }
 

@@ -20,6 +20,9 @@ command term "gnome-terminal"
 bind 4-Return exec
 bind 4-t terminal
 bind 4-g firefox
+bind 4-n nautilus
+bind 4-L "xscreensaver-command -lock"
+
 bind 4-comma "mixerctl outputs.master=-5"
 bind 4-period "mixerctl outputs.master=+5"
 
@@ -46,16 +49,12 @@ bind S4-3 movetogroup3
 bind S4-4 movetogroup4
 bind S4-5 movetogroup5
 bind 4-T vtile
-bind 4-L "xscreensaver-command -lock"
 
 mousebind 4-1 window_move
 mousebind 4-2 window_resize
 
 autogroup 1 "Navigator,Firefox"
 autogroup 1 "Dialog,Firefox"
-
-autogroup 2 "atom,Atom"
-autogroup 3 "gnome-terminal,Gnome-terminal"
 
 ignore conky
 ignore panel

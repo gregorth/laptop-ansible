@@ -1,4 +1,5 @@
-- dnf: name=tmux state=present
+- package: name=tmux state=present
+  when: ansible_os_family != "OpenBSD"
 
 - name: Link .tmux.conf
   file: src={{ role_path }}/files/tmux.conf dest=/home/{{ user }}/.tmux.conf state=link

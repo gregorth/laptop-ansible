@@ -1,5 +1,5 @@
 - name: Install software
-  dnf: pkg={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
     - zsh
     - htop
@@ -7,7 +7,9 @@
     - parallel
     - the_silver_searcher
     - kpcli
-    - pandoc # markdown
+
+- package: name=htop
+  when: ansible_os_family != "OpenBSD"
 
 - name: change shell to zsh
   user: name={{ user }} shell=/bin/zsh

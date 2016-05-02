@@ -14,7 +14,6 @@
 - file: path=/home/{{ user }}/Code state=directory
   sudo: false
 
-- include: google-chrome.yml
 - include: postgresql.yml
 - include: mongodb.yml
 - include: redis.yml

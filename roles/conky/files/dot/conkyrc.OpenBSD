@@ -1,0 +1,17 @@
+alignment top_left
+default_color white
+double_buffer yes
+own_window no
+own_window_class Conky
+own_window_type desktop
+use_xft yes
+gap_x 5
+gap_y 0
+xftfont Fira Mono:size=9
+out_to_x yes
+out_to_console no
+update_interval 2
+total_run_times 0
+use_spacer none
+TEXT
+CPU: ${cpubar cpu0 10,40 } ${cpu cpu0}% |  RAM: ${membar 10,40} ${memperc}% | ${if_up em0}LAN [${execi 10 netcheck.sh}] |${endif}${if_up iwn0}WLAN [${execi 10 netcheck.sh}] |${endif} Bat ${apm_battery_life} | ${execi 5 date }
