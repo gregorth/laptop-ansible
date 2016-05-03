@@ -11,8 +11,11 @@
 - package: name=htop
   when: ansible_os_family != "OpenBSD"
 
+- shell: 'which zsh'
+  register: zsh_path
+
 - name: change shell to zsh
-  user: name={{ user }} shell=/bin/zsh
+  user: name={{ user }} shell={{ zsh_path.stdout }}
 
 - name: Link dotfiles
   file: >-

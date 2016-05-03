@@ -1,4 +1,4 @@
-[laptop]
+[localhost]
 localhost
 
 [all:vars]

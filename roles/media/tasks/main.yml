@@ -1,5 +1,5 @@
 - name: Install software
-  dnf: pkg={{ item }} state=installed
+  dnf: name={{ item }} state=installed
   with_items:
     - clementine
     - gimp
@@ -8,13 +8,9 @@
     - audacity
     - vlc
     - smplayer
-    - sox
-    - flac
-    - shntool
-    - cuetools
 
 - name: Install codecs
-  dnf: pkg={{ item }} state=present
+  dnf: name={{ item }} state=present
   with_items:
     - gstreamer-plugins-ugly
     - gstreamer-plugins-bad

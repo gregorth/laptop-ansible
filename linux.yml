@@ -1,0 +1,10 @@
+- hosts: all
+  roles:
+   - shell
+   - desktop
+   - dev
+   - net
+   - syncthing
+   - media
+   - virt
+   - webex
