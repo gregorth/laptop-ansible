@@ -1,5 +1,5 @@
 - name: Install software
-  package: name={{ item }} state=installed
+  openbsd_pkg: name={{ item }} state=installed
   with_items:
     - xournal
     - xsel

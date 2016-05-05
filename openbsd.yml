@@ -5,3 +5,4 @@
     - net
   vars:
     ansible_python_interpreter: '/usr/local/bin/python'
+    ansible_become_method: doas

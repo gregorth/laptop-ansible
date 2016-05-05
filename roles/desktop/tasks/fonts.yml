@@ -1,4 +1,4 @@
-- package: name={{ item }} state=present
+- openbsd_pkg: name={{ item }} state=present
   with_items:
     - inconsolata-font
     - fira-fonts
