@@ -1,8 +1,0 @@
-[brollylssj-KeePassX]
-name=Copr repo for KeePassX owned by brollylssj
-baseurl=https://copr-be.cloud.fedoraproject.org/results/brollylssj/KeePassX/fedora-$releasever-$basearch/
-skip_if_unavailable=True
-gpgcheck=1
-gpgkey=https://copr-be.cloud.fedoraproject.org/results/brollylssj/KeePassX/pubkey.gpg
-enabled=1
-enabled_metadata=1

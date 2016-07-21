@@ -2,7 +2,7 @@
 
 sticky yes
 borderwidth 1
-fontname "Input Mono:pixelsize=12"
+fontname "Inconsolata:pixelsize=12"
 gap 0 0 0 0
 
 color menubg "#fdf6e3"

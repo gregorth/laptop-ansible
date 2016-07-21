@@ -1,14 +1,14 @@
 - name: Install software
   package: name={{ item }} state=installed
   with_items:
-    - xournal
     - xsel
+    - keepassx
     - xscreensaver
     - gnome-tweak-tool
+    - gnome-terminal
     - nautilus
     - eog
     - file-roller
-    - rxvt-unicode
     - libreoffice
     - gedit
     - conky
@@ -21,8 +21,6 @@
     state=link
   with_fileglob:
     - ./dot/*
-
-- include: keepassx.yml
 
 - include: fonts.yml
   when: ansible_os_family == "OpenBSD"

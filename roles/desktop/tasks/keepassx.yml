@@ -1,6 +1,0 @@
-- name: Install the KeepassX COPR repo
-  copy: src=_copr_brollylssj-KeePassX.repo dest=/etc/yum.repos.d/_copr_brollylssj-KeePassX.repo
-  when: ansible_os_family == "RedHat"
-
-- package: name=keepassx state=present
-

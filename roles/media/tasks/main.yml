@@ -4,10 +4,8 @@
     - clementine
     - gimp
     - inkscape
-    - ImageMagick
     - audacity
     - vlc
-    - smplayer
 
 - name: Install codecs
   dnf: name={{ item }} state=present

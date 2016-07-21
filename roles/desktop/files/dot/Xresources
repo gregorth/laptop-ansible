@@ -8,27 +8,3 @@ Xft.autohint:   0
 Xft.dpi:        96
 Xft.hintstyle:  hintfull
 Xft.rgba:       rgb
-
-!xterm
-xterm*faceName:           Fira Mono
-xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono
-xterm*faceSize:           10.0
-xterm*locale:             true
-xterm*loginShell:         true
-xterm*scrollBar:          false
-xterm*utf8:               2
-xterm*eightBitInput:      true
-xterm*showBlinkAsBold:    true
-
-!urxvt
-URxvt*geometry:      100x30
-URxvt.depth:         32
-URxvt.scrollBar:     false
-URxvt.saveLines:     4000
-URxvt.cursorBlink:   true
-URxvt.font:          xft:Fira Mono:pixelsize=12
-URxvt.boldFont:      xft:Fira Mono:pixelsize=12
-URxvt.letterSpace:   -1
-URxvt.termName:      xterm
-URxv.url-launcher:   firefox
-URxvt.underlineURLs: true

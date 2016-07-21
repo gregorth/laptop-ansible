@@ -22,12 +22,10 @@ Plug 'yegappan/mru'
 " Syntax
 Plug 'elzr/vim-json'
 Plug 'kchmck/vim-coffee-script'
-Plug 'ap/vim-css-color'
 Plug 'fatih/vim-go'
 Plug 'digitaltoad/vim-jade'
 Plug 'wavded/vim-stylus'
 Plug 'lepture/vim-jinja'
-Plug 'LeonB/vim-nginx'
 Plug 'aklt/plantuml-syntax'
 
 " Git
@@ -35,11 +33,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Colors
-Plug 'morhetz/gruvbox'
-Plug 'nanotech/jellybeans.vim'
 Plug 'chriskempson/base16-vim'
-Plug 'fcourchesne/ViZuki'
-Plug 'ronny/birds-of-paradise.vim'
+Plug 'nanotech/jellybeans.vim'
 Plug 'https://bitbucket.org/kisom/eink.vim.git'
 call plug#end()
 
@@ -139,10 +134,9 @@ endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-" decorate
 set background=dark
 set background=light
 let base16colorspace=256
-colorscheme base16-solarized
+colorscheme base16-solarized-light
 let g:airline_theme='base16'
 
