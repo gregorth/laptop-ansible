@@ -1,16 +1,13 @@
-- name: Install the PGDG repo
-  dnf: name="http://yum.postgresql.org/9.4/fedora/fedora-21-x86_64/pgdg-fedora94-9.4-2.noarch.rpm" state=installed
-
 - name: Install PostgreSQL server
-  dnf: name=postgresql94-server state=installed
+  dnf: name=postgresql-server state=installed
 
 - name: Initialise the database
-  command: /usr/pgsql-9.4/bin/postgresql94-setup initdb creates=/var/lib/pgsql/9.4/data/pg_hba.conf
+  command: postgresql-setup initdb creates=/var/lib/pgsql/data/pg_hba.conf
 
 - name: be sure postgresql is running and enabled
-  service: name=postgresql-9.4 state=running enabled=yes
+  service: name=postgresql state=running enabled=yes
 
 - name: copy the pg_hba.conf template
-  copy: src=pg_hba.conf dest=/var/lib/pgsql/9.4/data/pg_hba.conf owner=postgres group=postgres
+  copy: src=pg_hba.conf dest=/var/lib/pgsql/data/pg_hba.conf owner=postgres group=postgres
   notify: restart postgresql
 
