@@ -1,13 +1,5 @@
 #!/bin/sh
 
-CSS_URL="/tmp/mdown.css"
-
-echo "body {
-  padding: 10px;
-  padding-left: 20px;
-  color: #444;
-}" >> "$CSS_URL"
-
 src_file="$1"
 
 if [ -z "$src_file" ]; then
@@ -15,14 +7,12 @@ if [ -z "$src_file" ]; then
   exit 1
 fi
 
-src_dir=`dirname "$src_file"`
-dest_dir="$src_dir/html"
+if ! command -v gfm2html >/dev/null ; then
+  npm install -g gfm2html
+fi
 
-[ ! -d "$dest_dir" ] && dest_dir="/tmp"
+dest_file="/tmp/`basename "$src_file" | sed -e 's/.md//'`.html"
 
-src_file=`readlink -f "$src_file"`
-dest_file="$dest_dir/`basename "$src_file" | sed -e 's/.md//'`.html"
-
-pandoc -f markdown_github -c "$CSS_URL" "$src_file" > "$dest_file"
+gfm2html "$src_file" "$dest_file"
 
 if [ "$2" != "-s" ]; then xdg-open "$dest_file"; fi
