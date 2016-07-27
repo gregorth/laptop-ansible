@@ -125,7 +125,6 @@ map <leader>px :%!xmllint % --format<CR>
 map <leader>pc :CoffeeCompile<CR>
 map <leader>pm :!mdown "%"<CR>
 
-" ctrlp: use the_silver_searcher for indexing if present
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
@@ -134,9 +133,10 @@ endif
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-set background=dark
-set background=light
-let base16colorspace=256
-colorscheme base16-solarized-light
+" theme
 let g:airline_theme='base16'
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
