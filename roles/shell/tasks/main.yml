@@ -5,7 +5,6 @@
     - ncdu
     - parallel
     - the_silver_searcher
-    - kpcli
 
 - package: name=htop
   when: ansible_os_family != "OpenBSD"

@@ -1,7 +1,6 @@
 - name: Install software
   package: name={{ item }} state=present
   with_items:
-    - wireshark
     - nmap
     - youtube-dl
     - wget
@@ -12,6 +11,3 @@
   package: name=tcpdump state=present
   when: ansible_os_family != "OpenBSD"
 
-- name: Add user to the wireshark group
-  user: name={{ user }} groups="wireshark" append=yes
-  when: ansible_os_family != "OpenBSD"
