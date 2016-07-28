@@ -14,3 +14,4 @@ alias cl="clear"
 alias ap="ansible-playbook"
 alias xo="xdg-open"
 
+if [ -f "$HOME/.aliases.local" ]; then source "$HOME/.aliases.local"; fi

@@ -1,6 +1,4 @@
 - include: docker.yml
 
-- name: Install virt-manager and VirtualBox
-  dnf: name={{ item }} state=present
-  with_items:
-    - virt-manager
+- name: Install VirtualBox
+  dnf: name=VirtualBox state=present

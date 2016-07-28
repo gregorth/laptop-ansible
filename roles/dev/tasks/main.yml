@@ -7,7 +7,6 @@
 - name: Install Development-related tools
   dnf: name={{ item }} state=present
   with_items:
-    - tig
     - meld
     - golang
 
