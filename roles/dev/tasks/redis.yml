@@ -1,5 +1,5 @@
 - name: Install Redis
-  dnf: name=redis state=present
+  package: name=redis state=present
 
 - name: Enable and start redis service
   service: name=redis enabled=yes state=started

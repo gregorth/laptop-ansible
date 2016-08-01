@@ -1,14 +1,9 @@
-- name: Install Development Tools
-  dnf: name="@Development Tools" state=present
-
-- name: Install Development Libraries
-  dnf: name="@Development Libraries" state=present
-
 - name: Install Development-related tools
-  dnf: name={{ item }} state=present
+  package: name={{ item }} state=present
   with_items:
+    - base-devel
     - meld
-    - golang
+    - go
 
 - file: path=/home/{{ user }}/Code state=directory
   sudo: false
